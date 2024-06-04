@@ -1,0 +1,244 @@
+:root {
+  /* Primary color */
+
+  --lightRed: 0, 100%, 67%;
+  --orangeyYellow: 39, 100%, 56%;
+  --greenTeal: 166, 100%, 37%;
+  --cobaltBlue: 234, 85%, 45%;
+  --alpha: 0.1;
+
+  /* ## Gradients color */
+  /* Card left side background color  */
+  --lightSlateBlue: hsl(252, 100%, 67%);
+  --lightRoyalBlue: hsl(241, 81%, 54%);
+  /* Card left side Circle background color  */
+  --violetBlue: hsla(256, 72%, 46%, 1);
+  --persianBlue: hsla(241, 72%, 46%, 0);
+
+  /* ### Neutral color */
+
+  --white: hsl(0, 0%, 100%);
+  --paleBlue: hsl(221, 100%, 96%);
+  --lightLavender: hsl(241, 100%, 89%);
+  --darkGrayBlue: hsl(224, 30%, 27%);
+
+  --fontSize: 18px;
+}
+
+@font-face {
+  font-family: "Hanken";
+  src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Hanken";
+  font-size: var(--fontSize);
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 740px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 3px 3px 20px -2px var(--lightLavender);
+  border-radius: 32px;
+}
+
+.card .result {
+  width: 50%;
+  padding: 44px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--lightSlateBlue),
+    var(--lightRoyalBlue)
+  );
+  /* align-items: center; */
+  text-align: center;
+  border-radius: 32px;
+}
+
+.card .result h3 {
+  color: var(--lightLavender);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card .result .circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--violetBlue),
+    var(--persianBlue)
+  );
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 36px auto;
+}
+
+.card .result .circle h2 {
+  color: var(--white);
+  font-size: 72px;
+  font-weight: 700;
+}
+
+.card .circle p {
+  color: var(--lightLavender);
+  font-size: var(--fontSize);
+  font-weight: 500;
+}
+
+.card .result h2 {
+  color: var(--white);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card .result > p {
+  font-size: var(--fontSize);
+  color: var(--lightLavender);
+  margin: 12px;
+}
+
+.card .summary {
+  /* box-shadow: 3px 3px 20px -2px var(--lightLavender); */
+  width: 50%;
+  padding: 44px;
+}
+
+.card .summary h3 {
+  color: var(--darkGrayBlue);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.card .summary .mark_rows {
+  margin: 40px 0;
+}
+
+.card .summary .row {
+  display: flex;
+  justify-content: space-between;
+  /* text-align: center; */
+  /* background-color: burlywood; */
+  padding: 16px;
+  margin: 16px auto;
+  border-radius: 12px;
+}
+
+/* Summary list coloring start */
+
+.card .summary .row:nth-child(1) {
+  background-color: hsla(var(--lightRed), var(--alpha));
+}
+
+.card .summary .row:nth-child(1) .badge {
+  color: hsl(var(--lightRed));
+}
+
+.card .summary .row:nth-child(2) {
+  background-color: hsla(var(--orangeyYellow), var(--alpha));
+}
+
+.card .summary .row:nth-child(2) .badge {
+  color: hsl(var(--orangeyYellow));
+}
+
+.card .summary .row:nth-child(3) {
+  background-color: hsla(var(--greenTeal), var(--alpha));
+}
+
+.card .summary .row:nth-child(3) .badge {
+  color: hsl(var(--greenTeal));
+}
+
+.card .summary .row:nth-child(4) {
+  background-color: hsla(var(--cobaltBlue), var(--alpha));
+}
+
+.card .summary .row:nth-child(4) .badge {
+  color: hsl(var(--cobaltBlue));
+}
+
+/* Summary list coloring end */
+
+.card .summary .row .badge {
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+}
+
+.card .summary .row .badge img {
+  margin-right: 12px;
+}
+
+.card .summary .row p {
+  color: var(--darkGrayBlue);
+}
+
+.card .summary button {
+  display: block;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  border-radius: 50px;
+  font-size: var(--fontSize);
+  font-weight: 700;
+  margin-top: 16px;
+  background-color: var(--darkGrayBlue);
+  color: var(--white);
+  transition: all 0.3s;
+}
+
+.card .summary button:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--lightSlateBlue),
+    var(--lightRoyalBlue)
+  );
+}
+
+@media (max-width: 650px) {
+  body {
+    align-items: flex-start;
+    background-color: var(--white);
+  }
+
+  .card {
+    width: 375px;
+    box-shadow: none;
+    flex-direction: column;
+  }
+
+  .card .result {
+    width: 100%;
+    padding: 24px;
+    border-radius: 0 0 32px 32px;
+  }
+
+  .card .summary {
+    width: 100%;
+    padding: 24px;
+  }
+}
