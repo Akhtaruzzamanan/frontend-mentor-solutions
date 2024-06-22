@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+:root {
+  /* Primary color  */
+  --veryDarkMagenta: hsl(300, 43%, 22%);
+  --softPink: hsl(333, 80%, 67%);
+
+  /* Neutral color  */
+  --darkGrayishMagenta: hsl(303, 10%, 53%);
+  --lightGrayishMagenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Font  */
+  --ff-spartan: "League Spartan", sans-serif;
+  --fw-regular: 400;
+  --fw-madium: 500;
+  --fw-bold: 700;
+  --fontSize: 15px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-spartan);
+  background: url(./images/bg-pattern-bottom-mobile.svg) right bottom no-repeat,
+    url(./images/bg-pattern-top-mobile.svg) top left no-repeat;
+}
+
+.container {
+  padding: 0 24px;
+  margin: 5.5rem auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1180px;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.heading h2 {
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--veryDarkMagenta);
+}
+
+.heading p {
+  font-size: 16px;
+  font-weight: var(--fw-madium);
+  color: var(--darkGrayishMagenta);
+  line-height: 1.4;
+  margin: 1.5rem auto;
+}
+
+.rating_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto 24px;
+  gap: 16px;
+}
+
+.rating_group .rating {
+  padding: 16px;
+  background-color: var(--lightGrayishMagenta);
+  width: 100%;
+  border-radius: 8px;
+  color: var(--veryDarkMagenta);
+}
+
+.rating_group .rating .star {
+  padding-bottom: 8px;
+}
+
+.claint_review {
+  background-color: var(--veryDarkMagenta);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.claint_review:nth-child(1) {
+  margin-top: 24px;
+}
+
+.claint_review .user {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  padding: 8px;
+}
+.claint_review .user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.claint_review .user .bio {
+  font-size: var(--fontSize);
+  margin-left: 20px;
+}
+.claint_review .user .bio p {
+  color: var(--white);
+  font-weight: var(--fw-bold);
+  margin-bottom: 4px;
+}
+
+.claint_review .user .bio span {
+  color: var(--softPink);
+  font-weight: var(--fw-madium);
+}
+
+.claint_review .review_text {
+  color: var(--lightGrayishMagenta);
+  font-weight: var(--fw-madium);
+  line-height: 1.5;
+  padding: 8px;
+  margin-top: 12px;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: url(./images/bg-pattern-bottom-desktop.svg) right bottom
+        no-repeat,
+      url(./images/bg-pattern-top-desktop.svg) top left no-repeat;
+  }
+  .row {
+    flex-direction: row;
+  }
+
+  .heading {
+    text-align: start;
+    width: 50%;
+  }
+
+  .heading h2 {
+    font-size: 3rem;
+  }
+
+  .rating_group {
+    width: 50%;
+  }
+
+  .claint_review .user {
+    padding: 0;
+  }
+  .claint_review .review_text {
+    padding: 0;
+  }
+  .claint_review:nth-child(1) {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .row {
+    gap: 24px;
+  }
+  .container {
+    padding: 60px;
+    margin: 1rem auto;
+  }
+  .heading h2 {
+    font-size: 3.5rem;
+  }
+
+  .heading p {
+    margin: 2rem 2rem 1.5rem 0;
+    /* width: 75%; */
+  }
+
+  .rating_group .rating {
+    display: inline-flex;
+    width: auto;
+    padding: 16px 32px;
+    align-items: center;
+    width: 99%;
+  }
+
+  .rating_group .rating:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .rating_group .rating:nth-child(2) {
+    margin-left: 32px;
+  }
+  .rating_group .rating:nth-child(3) {
+    margin-left: 64px;
+  }
+
+  .rating_group .rating .star {
+    padding-bottom: 0;
+    padding-right: 16px;
+  }
+
+  .claint_review:nth-child(1) {
+    margin-top: 0;
+  }
+
+  .claint_review:nth-child(2) {
+    margin-top: 48px;
+  }
+  .claint_review:nth-child(3) {
+    margin-top: 96px;
+  }
+}
